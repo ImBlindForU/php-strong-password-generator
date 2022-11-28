@@ -1,5 +1,5 @@
 <?php
-include __DIR__ . "/partials/functions.php";
+session_start();
 
 $password_lenght = $_GET["length_password"];
 
@@ -19,11 +19,12 @@ $password_lenght = $_GET["length_password"];
 
     <!-- password -->
     <section>
-        <form action="index.php" method="GET">
+        <form action="password.php" method="GET">
             <label for="length_password">Lunghezza password</label>
             <input type="text" id="length_password" name="length_password">
-            <button href="password.php" type="submit">Crea</button>
+            <button  type="submit">Crea</button>
         </form>
     </section>
+    <?php $_SESSION['password_lenght'] = $password_lenght;?>
 </body>
 </html>

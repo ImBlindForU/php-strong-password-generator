@@ -1,4 +1,6 @@
 <?php 
+session_start();
+
 include __DIR__ . "/partials/functions.php";
 
 ?>
@@ -13,6 +15,8 @@ include __DIR__ . "/partials/functions.php";
 </head>
 <body>
     <h1>Ecco la tua password</h1>
-    <h2><?php echo random_string($password_lenght ); ?></h2>
+    <h2><?php echo random_string($_SESSION["password_lenght"]); ?></h2>
+
+<a href="index.php">Clicca qui per tornare alla page precedente</a>
 </body>
 </html>
